@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔗 BrimOS :: Trail Log</title>
+  <style>
+    body { background: #000; color: #00ffee; font-family: monospace; padding: 2rem; }
+    h1 { text-align: center; }
+    .log { background: #111; padding: 1rem; border-radius: 8px; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>🔗 BrimOS :: Trail Log</h1>
+  <div class="log" id="log"></div>
+  <script>
+    const log = JSON.parse(localStorage.getItem('brimos_trail') || '[]');
+    const out = document.getElementById('log');
+    out.innerHTML = log.map(t => `[${t.timestamp}] ${t.label}`).join('<br>') || 'No trail history found.';
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>📤 Outbound Signal</title>
+<style>body{background:#000;color:#0ff;font-family:monospace;padding:2rem}
+pre{background:#111;padding:1rem;border-radius:8px}</style></head><body>
+<h1>📤 Outbound Beacon</h1><pre id="pulse"></pre>
+<script>
+let p = JSON.parse(localStorage.getItem('brimos_outbound')||'{}');
+document.getElementById('pulse').innerText = p.timestamp ? `[${p.timestamp}] ${p.message}` : 'No signal yet.';
+</script></body></html>
